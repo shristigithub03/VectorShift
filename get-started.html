@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - VectorShift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="security-page.css">
+    <style>
+        .get-started-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .step-card {
+            background: rgb(137, 8, 250);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .step-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .step-card:hover::after {
+            opacity: 1;
+        }
+        .step-card a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .step-content {
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgb(137, 8, 250);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: rgb(117, 0, 230);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">VS VectorShift</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="enterprise.html">Enterprise</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="contact.html">Talk to Us</a></li>
+        </ul>
+        <a href="login.html" class="btn">Log in</a>
+        <a href="get-started.html" class="btn active">Get Started</a>
+    </nav>
+
+    <div class="get-started-container">
+        <h1>Get Started with VectorShift</h1>
+        <p>Begin your AI journey in just a few simple steps</p>
+        
+        <div class="steps">
+            <div class="step-card" onclick="window.location.href='signup.html'">
+                <a href="signup.html"></a>
+                <div class="step-content">
+                    <h2>1. Sign Up</h2>
+                    <p>Create your free account</p>
+                </div>
+            </div>
+            <div class="step-card" onclick="window.location.href='connect-data.html'">
+                <a href="connect-data.html"></a>
+                <div class="step-content">
+                    <h2>2. Connect Data</h2>
+                    <p>Link your data sources</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h2>3. Build Models</h2>
+                <p>Create your first AI model</p>
+            </div>
+        </div>
+        
+        <a href="signup.html" class="btn" style="margin-top: 40px;">Create Free Account</a>
+    </div>
+
+    <script>
+        // Highlight current page in navigation
+        document.querySelector(`a[href="${window.location.pathname.split('/').pop()}"]`).classList.add('active');
+    </script>
+</body>
+</html>

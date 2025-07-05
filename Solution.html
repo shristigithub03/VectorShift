@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - VectorShift</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="security-page.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav ul li a {
+            color: #ebe5e5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #faf3f3;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 1rem;
+            background-color: #8908fa;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .solutions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .solutions-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .solutions-hero h1 {
+            color: #8908fa;
+            margin-bottom: 10px;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid #8908fa;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card h2 {
+            color: #8908fa;
+            margin-top: 0;
+        }
+        
+        .solution-card p {
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .active {
+            font-weight: 600;
+            color: white !important;
+            position: relative;
+        }
+        
+        .active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">VS VectorShift</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="solutions.html" class="active">Solutions</a></li>
+            <li><a href="enterprise.html">Enterprise</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="contact.html">Talk to Us</a></li>
+        </ul>
+        <a href="login.html" class="btn">Log in</a>
+        <a href="get-started.html" class="btn">Get Started</a>
+    </nav>
+
+    <div class="solutions-container">
+        <section class="solutions-hero">
+            <h1>Industry Solutions</h1>
+            <p>Tailored AI solutions for your specific business needs</p>
+        </section>
+        
+        <section class="solution-grid">
+            <div class="solution-card" onclick="window.location.href='financial-services.html'">
+                <h2>Financial Services</h2>
+                <p>Fraud detection, risk assessment, and personalized banking solutions powered by our advanced AI platform.</p>
+                <ul>
+                    <li>Real-time transaction monitoring</li>
+                    <li>Credit risk modeling</li>
+                    <li>Anti-money laundering detection</li>
+                    <li>Personalized investment recommendations</li>
+                </ul>
+            </div>
+            
+            <div class="solution-card" onclick="window.location.href='healthcare.html'">
+                <h2>Healthcare</h2>
+                <p>Patient diagnosis, treatment recommendations, and operational efficiency for healthcare providers.</p>
+                <ul>
+                    <li>Medical image analysis</li>
+                    <li>Predictive patient outcomes</li>
+                    <li>Drug interaction detection</li>
+                    <li>Hospital resource optimization</li>
+                </ul>
+            </div>
+            
+            <div class="solution-card" onclick="window.location.href='retail.html'">
+                <h2>Retail</h2>
+                <p>Personalized recommendations, inventory optimization, and customer insights to boost sales.</p>
+                <ul>
+                    <li>AI-powered product recommendations</li>
+                    <li>Demand forecasting</li>
+                    <li>Customer sentiment analysis</li>
+                    <li>Dynamic pricing models</li>
+                </ul>
+            </div>
+            
+            <div class="solution-card" onclick="window.location.href='manufacturing.html'">
+                <h2>Manufacturing</h2>
+                <p>Predictive maintenance, quality control, and supply chain optimization solutions.</p>
+                <ul>
+                    <li>Equipment failure prediction</li>
+                    <li>Defect detection systems</li>
+                    <li>Supply chain optimization</li>
+                    <li>Production line efficiency</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Highlight current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - VectorShift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="security-page.css">
+    <style>
+        .resources-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .resource-card {
+            background: rgb(137, 8, 250);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .resource-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .resource-card:hover::after {
+            opacity: 1;
+        }
+        .resource-card a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .resource-content {
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">VS VectorShift</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="enterprise.html">Enterprise</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html" class="active">Resources</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="contact.html">Talk to Us</a></li>
+        </ul>
+        <a href="login.html" class="btn">Log in</a>
+        <a href="get-started.html" class="btn">Get Started</a>
+    </nav>
+
+    <div class="resources-container">
+        <h1>Resources</h1>
+        <p>Learn how to get the most out of VectorShift</p>
+        
+        <div class="resource-card" onclick="window.location.href='documentation.html'">
+            <a href="documentation.html"></a>
+            <div class="resource-content">
+                <h2>Documentation</h2>
+                <p>Comprehensive guides and API references</p>
+            </div>
+        </div>
+        
+        <div class="resource-card" onclick="window.location.href='tutorials.html'">
+            <a href="tutorial.html"></a>
+            <div class="resource-content">
+                <h2>Tutorials</h2>
+                <p>Step-by-step tutorials for common use cases</p>
+            </div>
+        </div>
+        
+        <div class="resource-card" onclick="window.location.href='blog.html'">
+            <a href="blog.html"></a>
+            <div class="resource-content">
+                <h2>Blog</h2>
+                <p>Latest news and insights about AI and machine learning</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(`a[href="${window.location.pathname.split('/').pop()}"]`).classList.add('active');
+    </script>
+</body>
+</html>

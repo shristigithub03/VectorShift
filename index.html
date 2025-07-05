@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VectorShift - AI Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="security-page.css">
+    
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        /* Navigation Bar - Matching Platform.html */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav ul li a {
+            color: #ebe5e5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #faf3f3;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 1rem;
+            background-color: #8908fa;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #7a07e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Hero Section - Updated to match Platform.html */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Video Templates Section - Updated with purple cards */
+        .video-templates {
+            padding: 4rem 0;
+        }
+        
+        .video-templates h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .template-card {
+            background: rgb(137, 8, 250);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .template-thumbnail {
+            position: relative;
+            height: 180px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+        
+        .template-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-icon::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 25px solid #e74c3c;
+            margin-left: 5px;
+        }
+        
+        .template-info {
+            padding: 1.5rem;
+        }
+        
+        .template-info h3 {
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .template-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Purple feature cards section - like Platform.html */
+        .features-section {
+            padding: 4rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: rgb(137, 8, 250);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: white;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">VS VectorShift</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="Platform.html">Platform</a></li>
+            <li><a href="Solution.html">Solutions</a></li>
+            <li><a href="Enterprise.html">Enterprise</a></li>
+            <li><a href="Pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="contact.html">Talk to Us</a></li>
+        </ul>
+        <a href="login.html" class="btn">Log in</a>
+        <a href="get-started.html" class="btn">Get Started</a>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Transform Your Business with AI</h1>
+            <p>VectorShift provides enterprise-grade AI solutions to automate workflows, analyze data, and drive decision-making.</p>
+            <a href="get-started.html" class="btn">Get Started</a>
+        </section>
+
+        <section class="video-templates">
+            <h2>Explore Our Platform Videos</h2>
+            <div class="template-grid">
+                <!-- Template 1 -->
+                <a href="https://www.youtube.com/watch?v=-jEOP_O65OA" target="_blank" class="template-card">
+                    <div class="template-thumbnail">
+                        
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Build an AI Website</h3>
+                        <p>Chatbot</p>
+                    </div>
+                </a>
+                
+                <!-- Template 2 -->
+                <a href="https://www.youtube.com/watch?v=XGP8Xo-j5ig" target="_blank" class="template-card">
+                    <div class="template-thumbnail">
+                        
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Classifying leads with AI</h3>
+                        <p></p>
+                    </div>
+                </a>
+                
+                <!-- Template 3 -->
+                <a href="https://www.youtube.com/watch?v=otZREtgf2iI" target="_blank" class="template-card">
+                    <div class="template-thumbnail">
+                        
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="template-info">
+                        <h3>AI Invoice Automation</h3>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+        </section>
+                <!-- Template 3 -->
+                <a href="https://www.youtube.com/watch?v=GaM3DlZKzis" target="_blank" class="template-card">
+                    <div class="template-thumbnail">
+                        
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Ai Webscrapping</h3>
+                        <p>Automation</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Data Integration</h3>
+                    <p>Seamlessly connect to all your data sources with our universal connectors.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Model Training</h3>
+                    <p>Train custom models with our intuitive interface and automated pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Deployment</h3>
+                    <p>Deploy models to production with one-click simplicity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Monitoring</h3>
+                    <p>Track model performance and data quality in real-time.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 VectorShift. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Highlight current page in navigation
+        document.querySelector(`a[href="${window.location.pathname.split('/').pop()}"]`).classList.add('active');
+    </script>
+</body>
+</html>

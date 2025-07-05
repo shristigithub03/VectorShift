@@ -1,0 +1,253 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #e5e7eb;
+    background: linear-gradient(90deg, #4c1d95 0%, #1e0033 100%);
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: #a78bfa;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a78bfa;
+}
+
+nav .btn {
+    padding: 8px 16px;
+    background: #a78bfa;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+nav .btn:hover {
+    background: #8b5cf6;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    color: #9ca3af;
+}
+
+.hero .btn {
+    padding: 12px 24px;
+    background: #a78bfa;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #8b5cf6;
+}
+
+/* Certifications Section */
+.certifications {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.certifications h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d1d5db;
+    margin-bottom: 40px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    justify-items: center;
+}
+
+.cert-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.cert-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+}
+
+.cert-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 12px;
+}
+
+.cert-card p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Security Measures Section */
+.security-measures {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.security-measures h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d1d5db;
+    margin-bottom: 40px;
+}
+
+.measures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    justify-items: center;
+}
+
+.measure-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.measure-card img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 12px;
+}
+
+.measure-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a78bfa;
+    margin-bottom: 8px;
+}
+
+.measure-card p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Commitment Section */
+.commitment {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.commitment h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d1d5db;
+    margin-bottom: 24px;
+}
+
+.commitment p {
+    font-size: 1rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+.commitment .btn {
+    padding: 12px 24px;
+    background: #a78bfa;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.commitment .btn:hover {
+    background: #8b5cf6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .cert-grid, .measures-grid {
+        grid-template-columns: 1fr;
+    }
+}
